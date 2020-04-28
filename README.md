@@ -1,4 +1,4 @@
-![](https://media.giphy.com/media/cEYFeE4wJ6jdDVBiiIM/giphy.gif)
+![rocketman](https://media.giphy.com/media/cEYFeE4wJ6jdDVBiiIM/giphy.gif)
 
 
 # PROJECT 2 README <!-- omit in toc -->
@@ -75,11 +75,11 @@ https://vectr.com/claireb328/i1BXBT4i9P?page=3
 src
 |__ components/
       |__ App.js
-      |__ Header.js
+      |__ Home.js
       |__ Nav.js
-      |__ SearchBar.js
-      |__ Recipe.js
-      |__ Footer.js
+      |__ SearchResults.js
+      |__ Recipes.js
+      |__ App.css
 ```
 
 <br>
