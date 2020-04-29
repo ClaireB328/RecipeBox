@@ -8,10 +8,10 @@ import Recipe from './Recipe'
 
 
 function App() {
-  const  apiKey = process.env.REACT_APP_RECIPE_BOX
   const [input, updateInput] = useState("")
   const [recipes, setRecipes] = useState([])
-
+  const  apiKey = process.env.REACT_APP_RECIPE_BOX
+  
 
 
       const apiCall = async (e) => {
@@ -35,15 +35,29 @@ function App() {
   </Link>
   </nav>
   <div>
-
       <Route path='/'> 
        {recipes.length && <Redirect to="/SearchResults"/>} 
         </Route>
 
-        <Route path="/SearchResults">
-        <SearchResults recipe={Recipe} />
-        </Route>
-  </div>
+      <Route path="/SearchResults"> 
+       <div>
+      {recipes.map(recipe =>  
+      <SearchResults key={recipe.label} 
+      recipe={recipe.recipe}/>
+      )}
+      </div>
+      </Route>
+  
+
+      <Route path="/Recipe">
+      <div>
+      {recipes.map(recipe =>  
+      <Recipe key={recipe.label} 
+      recipe={recipe.recipe}/>
+        )}
+      </div>
+      </Route>  
+      </div>
 
 <form onSubmit={apiCall}>
     <input 
@@ -54,16 +68,6 @@ function App() {
     <button>Submit</button>
 </form>
 
-  <div>
-    {recipes.map(recipe =>  
-    <SearchResults
-    key={recipe.label}
-    recipe={recipe}
-    />
-    )}
-    </div>
-
- 
    </>
   )
 
