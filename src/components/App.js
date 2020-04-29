@@ -28,12 +28,21 @@ function App() {
 
   return (
     <>
-
   <nav className="header">
 <Link exact to="/">
     <h1>RECIPE BOX</h1>
   </Link>
   </nav>
+
+  <form onSubmit={apiCall}>
+    <input 
+      type="text" 
+      placeholder="search ingredient" 
+      onChange={handleInputChange}>
+    </input>
+    <button>Submit</button>
+</form>
+
   <div>
       <Route path='/'> 
        {recipes.length && <Redirect to="/SearchResults"/>} 
@@ -49,24 +58,21 @@ function App() {
       </Route>
   
 
-      <Route path="/Recipe">
+      <Route exact path="/recipe">
       <div>
       {recipes.map(recipe =>  
       <Recipe key={recipe.label} 
       recipe={recipe.recipe}/>
         )}
       </div>
-      </Route>  
-      </div>
+      </Route> 
 
-<form onSubmit={apiCall}>
-    <input 
-      type="text" 
-      placeholder="search ingredient" 
-      onChange={handleInputChange}>
-    </input>
-    <button>Submit</button>
-</form>
+      <Route path="/recipe/:label">
+      <Recipe recipes={recipes}
+      />
+      </Route>
+
+      </div>
 
    </>
   )
