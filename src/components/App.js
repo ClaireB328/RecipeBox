@@ -1,54 +1,80 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Redirect, Link } from "react-router-dom"
+import React, { useState } from 'react';
+import { Route, Redirect, Link, useLocation } from "react-router-dom"
 import './App.css';
 import axios from "axios";
 import SearchResults from './SearchResults'
 import Recipe from './Recipe'
+import Form from './Form'
+import Footer from './Footer'
+// import Header from './Header'
+import Image from './Image'
 
 
 
 function App() {
+  let location = useLocation()
+  console.log(location)
+  let pathname = location.pathname
   const [input, updateInput] = useState("")
   const [recipes, setRecipes] = useState([])
+
+
   const  apiKey = process.env.REACT_APP_RECIPE_BOX
   
 
 
-      const apiCall = async (e) => {
-        if (e) e.preventDefault();
-        const data = await axios (`https://corsanywhere.herokuapp.com/https://api.edamam.com/search?q=${input}&app_key=${apiKey}&app_id=ec9b097c`) 
+  const apiCall = async (e) => {
+      if (e) e.preventDefault();
+      setRecipes([]);
+      updateInput("")
 
-    //updateRecipe()
-    setRecipes(data.data.hits)
+
+  const data = await axios (`https://corsanywhere.herokuapp.com/https://api.edamam.com/search?q=${input}&app_key=${apiKey}&app_id=ec9b097c`) 
+
+  //updateRecipe()
+  setRecipes(data.data.hits)
   }
   
+
   const handleInputChange = (e) => {
-    updateInput (e.target.value)  
+  updateInput (e.target.value)  
   }
+
+  const clearState = (e) => {
+    setRecipes([])
+    }
+
 
   return (
     <>
-  <nav className="header">
-<Link exact to="/">
-    <h1>RECIPE BOX</h1>
-  </Link>
-  </nav>
+ <div>
+    <nav className="header">
+      <Link exact to="/" onClick={clearState}>
+        <h1>RECIPE BOX</h1>
+      </Link>
+      </nav>
+  </div> 
 
-  <form onSubmit={apiCall}>
-    <input 
-      type="text" 
-      placeholder="search ingredient" 
-      onChange={handleInputChange}>
-    </input>
-    <button>Submit</button>
-</form>
+
+  {
+    pathname == "/recipe" || pathname == "/SearchResults" || pathname == "/" && 
+
+    <Form input={input} handleInputChange = {handleInputChange} apiCall={apiCall} 
+    />
+
+  }
+
+  <Route exact path='/'> 
+  <Image
+  />
+  </Route>
 
   <div>
-      <Route path='/'> 
+      <Route exact path='/'> 
        {recipes.length && <Redirect to="/SearchResults"/>} 
         </Route>
 
-      <Route path="/SearchResults"> 
+      <Route exact path="/SearchResults"> 
        <div>
       {recipes.map(recipe =>  
       <SearchResults key={recipe.label} 
@@ -67,16 +93,21 @@ function App() {
       </div>
       </Route> 
 
-      <Route path="/recipe/:label">
+
+      <Route exact path="/recipe/:label">
       <Recipe recipes={recipes}
       />
       </Route>
 
-      </div>
+    </div>
 
-   </>
+
+
+        <Footer
+        title="By Claire"
+        />
+    </>
   )
-
 
   }
 export default App;
