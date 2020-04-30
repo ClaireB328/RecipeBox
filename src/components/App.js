@@ -6,7 +6,7 @@ import SearchResults from './SearchResults'
 import Recipe from './Recipe'
 import Form from './Form'
 import Footer from './Footer'
-// import Header from './Header'
+import Header from './Header'
 import Image from './Image'
 
 
@@ -39,14 +39,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <nav className="header">
-          <Link exact to="/" onClick={clearState}>
-            <h1>RECIPE BOX</h1>
-          </Link>
-        </nav>
-      </div> 
-
+      <Header clearState={clearState}/> 
 
   {
     pathname == "/recipe" || pathname == "/SearchResults" || pathname == "/" && 
@@ -55,11 +48,11 @@ function App() {
     />
   }
 
-    <Route exact path='/'> 
+      <Route exact path='/'> 
           <Image/>
-    </Route>
+      </Route>
 
-      <div>
+      {/* <div> */}
         <Route exact path='/'> 
           {recipes.length && <Redirect to="/SearchResults"/>} 
         </Route>
@@ -73,12 +66,12 @@ function App() {
   
 
       <Route exact path="/recipe">
-      <div>
+      {/* <div> */}
       {recipes.map(recipe =>  
       <Recipe key={recipe.label} 
       recipe={recipe.recipe}/>
         )}
-      </div>
+      {/* </div> */}
       </Route> 
 
 
@@ -87,10 +80,10 @@ function App() {
       />
       </Route>
 
-    </div>
+    {/* </div> */}
 
         <Footer
-        title= "&copy; By Claire B."
+        title= "&copy; By Claire B. Edamam API"
         />
     </>
   )

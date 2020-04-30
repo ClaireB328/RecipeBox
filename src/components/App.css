@@ -3,9 +3,8 @@
     color: white;
     display: flex;
     justify-content: center;
-    height: 70px;
-
-
+    height: 80px;
+    padding-bottom: 20px;
   }
 
   a {
@@ -53,26 +52,92 @@ button {
     height: 100vh;
   }
   
-.searchResults  {
+ .searchResults  {
     display: flex;
     align-content: center;
+    flex-direction: column;
+    justify-content: center;
     color: black;
-    padding: 20px 20px;
+    padding: 40px 20px;
     background-color: beige;
+
+
    
 }
 
-.searchResults h1 {
+/* .searchResults h1 {
     display: flex;
     text-align: center;
 }
-    
+
+
+.recipe h2{
+   display: flex;
+   text-align: center; 
+}  */
+
+  
+.link{
+    background-color: #323232;
+    padding-top: 5px;
+    font-size: 15px;
+    margin-bottom: auto;  
+}
+
+
+
   footer {
     background-color: #405876;
-    height: 20px;
+    height: 15px;
     padding-top: 15px;
+    padding-bottom: 15px;
     color: white;
     display: flex;
     justify-content: center;
+
 }
-  
+
+@media only screen and (max-width: 600px) {
+
+    .header {
+        padding-bottom: 10px;
+    }
+    a {
+        font-size: 20px;
+      
+    }
+
+    /* .image {
+        padding-left: 10px;
+    } */
+
+    .recipe h1 {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .recipe h2 {
+        text-decoration: underline;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .recipe h3{
+        font-size: 15px;
+    }
+
+    .link {
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+    
+    }
+
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+
+
+}

@@ -27,12 +27,13 @@ export default function Recipe(props) {
     }
 
     return (   
-        <div>
+        <div className="recipe">
             <h1>{recipe.label}</h1>
             <img src={recipe.image}></img>
-            <h1>Ingredients</h1>
-            <h2>{recipe.ingredientLines}</h2>
-            <a className="link" href={recipe.url} >Read More</a>
+            <h2>Ingredients</h2>
+            <h3>{recipe.ingredientLines}</h3>
+            <a className="link" target="_blank"  href={recipe.url}>Read More</a>
+
         </div>
     )
 }
