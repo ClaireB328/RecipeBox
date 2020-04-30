@@ -6,11 +6,13 @@ import { Link } from "react-router-dom"
 
 
 
+
 function SearchResults(props) {
 console.log(props)
     return (
         <Link to={`/recipe/${props.recipe.label}`}>
-        <div>
+
+        <div className="searchResults">
         <h1>{props.recipe.label}</h1>
         <img src={props.recipe.image}></img>  
         </div>

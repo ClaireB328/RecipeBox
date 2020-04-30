@@ -18,42 +18,34 @@ function App() {
   const [input, updateInput] = useState("")
   const [recipes, setRecipes] = useState([])
 
-
   const  apiKey = process.env.REACT_APP_RECIPE_BOX
   
-
-
   const apiCall = async (e) => {
       if (e) e.preventDefault();
       setRecipes([]);
       updateInput("")
-
-
-  const data = await axios (`https://corsanywhere.herokuapp.com/https://api.edamam.com/search?q=${input}&app_key=${apiKey}&app_id=ec9b097c`) 
-
-  //updateRecipe()
-  setRecipes(data.data.hits)
+      const data = await axios (`https://corsanywhere.herokuapp.com/https://api.edamam.com/search?q=${input}&app_key=${apiKey}&app_id=ec9b097c`) 
+      setRecipes(data.data.hits)
   }
   
-
   const handleInputChange = (e) => {
-  updateInput (e.target.value)  
+      updateInput (e.target.value)  
   }
 
   const clearState = (e) => {
-    setRecipes([])
-    }
+      setRecipes([])
+  }
 
 
   return (
     <>
- <div>
-    <nav className="header">
-      <Link exact to="/" onClick={clearState}>
-        <h1>RECIPE BOX</h1>
-      </Link>
-      </nav>
-  </div> 
+      <div>
+        <nav className="header">
+          <Link exact to="/" onClick={clearState}>
+            <h1>RECIPE BOX</h1>
+          </Link>
+        </nav>
+      </div> 
 
 
   {
@@ -61,27 +53,23 @@ function App() {
 
     <Form input={input} handleInputChange = {handleInputChange} apiCall={apiCall} 
     />
-
   }
 
-  <Route exact path='/'> 
-  <Image
-  />
-  </Route>
+    <Route exact path='/'> 
+          <Image/>
+    </Route>
 
-  <div>
-      <Route exact path='/'> 
-       {recipes.length && <Redirect to="/SearchResults"/>} 
+      <div>
+        <Route exact path='/'> 
+          {recipes.length && <Redirect to="/SearchResults"/>} 
         </Route>
 
-      <Route exact path="/SearchResults"> 
-       <div>
-      {recipes.map(recipe =>  
-      <SearchResults key={recipe.label} 
-      recipe={recipe.recipe}/>
-      )}
-      </div>
-      </Route>
+        <Route exact path="/SearchResults"> 
+          {recipes.map(recipe =>  
+        <SearchResults key={recipe.label} 
+           recipe={recipe.recipe}/>
+          )}
+        </Route>
   
 
       <Route exact path="/recipe">
@@ -101,10 +89,8 @@ function App() {
 
     </div>
 
-
-
         <Footer
-        title="By Claire"
+        title= "&copy; By Claire B."
         />
     </>
   )
