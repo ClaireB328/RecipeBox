@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import Footer from './Footer'
 
 
-
 const style = {
     backgroundColor: '#405876',
     height: '15px',
@@ -15,5 +14,5 @@ const style = {
 }
 
 storiesOf('Footer', module)
-  .add('Footer', () => <Footer title="&copy; By: Claire B. Edamam API" style={style}/>)
+  .add('Footer', () => <Footer title="&copy;Claire Buettner" style={style}/>)
 

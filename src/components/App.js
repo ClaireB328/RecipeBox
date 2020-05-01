@@ -84,7 +84,7 @@ function App() {
     {/* </div> */}
 
         <Footer
-        title= "&copy; By Claire B. Edamam API"
+        title= "&copy;Claire Buettner"
         />
     </>
   )
