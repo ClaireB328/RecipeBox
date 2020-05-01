@@ -32,9 +32,7 @@ console.log(recipe.ingredientLines)
             <img src={recipe.image}></img>
             <h2>Ingredients</h2>
             <ul>{recipe.ingredientLines}</ul>
-            <a className="link" target="_blank"  href={recipe.url}>Read More</a>
-
-
+            <a className="link" target="_blank"  href={recipe.url}>Recipe Link</a>
         </div>
     )
 }

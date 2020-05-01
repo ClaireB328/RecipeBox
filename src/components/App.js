@@ -36,13 +36,15 @@ function App() {
       setRecipes([])
   }
 
+  
+
 
   return (
     <>
       <Header clearState={clearState}/> 
 
   {
-    pathname == "/recipe" || pathname == "/SearchResults" || pathname == "/" && 
+    pathname === "/recipe" || pathname === "/SearchResults" || pathname === "/" && 
 
     <Form input={input} handleInputChange = {handleInputChange} apiCall={apiCall} 
     />

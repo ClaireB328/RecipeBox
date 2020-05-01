@@ -15,7 +15,5 @@ const style = {
     padding: '10px 20px'
 }
 
-
-
 storiesOf('Button', module)
-    .add('Primary', () => <Button label="Show More" style={style} />)
+    .add('Primary', () => <Button label="Recipe Link" style={style} />)

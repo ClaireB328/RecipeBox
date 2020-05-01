@@ -118,7 +118,7 @@ src
 | Recipes to render |    H     |     8 hrs      |          |     4hrs     |
 | Storybook |    L     |     3 hrs      |          |     8 hrs     |
 | CSS/Final touches |    L     |     6 hrs      |          |     8 hrs     |
-| TOTAL               |          |     32      |         |     TBD     |
+| TOTAL               |          |     32      |         |     39    |
 
 <br>
 

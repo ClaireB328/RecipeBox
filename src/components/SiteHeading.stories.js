@@ -11,8 +11,7 @@ const style = {
     color: 'white',
     display: 'flex',
     justifyContent: 'center'
-    
-    
+       
 }
 
 storiesOf('SiteHeading', module)
