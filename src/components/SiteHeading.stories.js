@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react';
-import Footer from './Footer'
-
+import SiteHeading from './SiteHeading'
 
 
 const style = {
@@ -11,9 +10,9 @@ const style = {
     paddingBottom: '15px',
     color: 'white',
     display: 'flex',
-    justifyContent: 'center'  
+    justifyContent: 'center'
+    
 }
 
-storiesOf('Footer', module)
-  .add('Footer', () => <Footer title="&copy; By: Claire B. Edamam API" style={style}/>)
-
+storiesOf('SiteHeading', module)
+  .add('SiteHeading', () => <SiteHeading label="SiteHeading" style={style}/>)

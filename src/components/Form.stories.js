@@ -13,4 +13,4 @@ const style = {
 }
 
 storiesOf('Form', module)
-  .add('Form', () => <Form label="Form" style={style}/>)
+  .add('Form', () => <Form input="Search Ingredient" style={style}/>)

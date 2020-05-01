@@ -5,12 +5,14 @@
     justify-content: center;
     height: 80px;
     padding-bottom: 20px;
+
   }
 
   a {
     color: white;
     text-decoration: none;
     font-size: 30px;
+    font-family: 'Dosis', sans-serif;
   }
 
 form, button {
@@ -53,37 +55,44 @@ button {
   }
   
  .searchResults  {
+    background-color: #d9e4f5;
+    background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
     display: flex;
-    align-content: center;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     color: black;
-    padding: 40px 20px;
-    background-color: beige;
-
-
-   
+    padding: 20px 20px;
+    font-size: 20px;
+    text-decoration: underline;
 }
 
-/* .searchResults h1 {
+.recipe {
+    background-color: #d9e4f5;
+    background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
     display: flex;
-    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}  
+
+.recipe h2 {
+    padding-top: 10px;
 }
 
+.recipe ul{
+    font-size: 15px;
+ 
+}
 
-.recipe h2{
-   display: flex;
-   text-align: center; 
-}  */
-
-  
 .link{
     background-color: #323232;
     padding-top: 5px;
-    font-size: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
     margin-bottom: auto;  
-}
 
+}
 
 
   footer {
@@ -98,18 +107,14 @@ button {
 }
 
 @media only screen and (max-width: 600px) {
-
     .header {
         padding-bottom: 10px;
     }
+
     a {
         font-size: 20px;
-      
     }
 
-    /* .image {
-        padding-left: 10px;
-    } */
 
     .recipe h1 {
         font-size: 15px;
@@ -126,13 +131,20 @@ button {
         font-size: 15px;
     }
 
+    
     .link {
         font-size: 10px;
         display: flex;
-        justify-content: center;
-    
-    }
+        justify-content: center; 
 
+    }
+    
+    footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    }
 
 }
 

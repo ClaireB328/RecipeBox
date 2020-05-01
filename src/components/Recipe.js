@@ -25,14 +25,15 @@ export default function Recipe(props) {
         }
     })
     }
-
+console.log(recipe.ingredientLines)
     return (   
         <div className="recipe">
             <h1>{recipe.label}</h1>
             <img src={recipe.image}></img>
             <h2>Ingredients</h2>
-            <h3>{recipe.ingredientLines}</h3>
+            <ul>{recipe.ingredientLines}</ul>
             <a className="link" target="_blank"  href={recipe.url}>Read More</a>
+
 
         </div>
     )

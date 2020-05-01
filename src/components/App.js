@@ -46,10 +46,11 @@ function App() {
 
     <Form input={input} handleInputChange = {handleInputChange} apiCall={apiCall} 
     />
+
   }
 
       <Route exact path='/'> 
-          <Image/>
+          <Image title={Image} />
       </Route>
 
       {/* <div> */}
