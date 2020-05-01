@@ -54,6 +54,8 @@ https://vectr.com/claireb328/i1BXBT4i9P?page=3
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
 |   React Router   |  |
+|   Storybook   | css/wireframes |
+
 
 
 <br>
@@ -63,7 +65,7 @@ https://vectr.com/claireb328/i1BXBT4i9P?page=3
 
 |    API     | Quality Docs? | Website       | Sample Query                            |
 | :--------: | :-----------: | :------------ | :-------------------------------------- |
-| Recipe Puppy |      yes      | http://www.recipepuppy.com/api/| http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3|
+| Edamam |      yes      | https://api.edamam.com/search?q=${input}&app_key=${apiKey}&app_id=ec9b097c|
 
 <br>
 
@@ -74,24 +76,28 @@ https://vectr.com/claireb328/i1BXBT4i9P?page=3
 ```
 src
 |__ components/
-      |__ App.js
-      |__ Home.js
-      |__ Nav.js
-      |__ SearchResults.js
-      |__ Recipes.js
       |__ App.css
+      |__ App.js
+      |__ Button.js
+      |__ Footer.js
+      |__ Form.js
+      |__ FormButton.js
+      |__ Header.js
+      |__ Recipe.js
+      |__ SearchResults.js
+      |__ SiteHeading.js
+      
 ```
 
 <br>
 
 #### Component Breakdown
 
-> Use this section to go into further depth regarding your components, including breaking down the components as stateless or stateful, and considering the passing of data between those components.
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    APP.js    | functional |   n   |   n   | _will be the parent component and hold all information._               |
-|  Header | functional |   n   |   n   | _the header will contain the navigation._       |
+|    APP.js    | functional |   y   |   y   | _will be the parent component and hold all information._               |
+|  Header | functional |   n   |   y   | _the header will contain the navigation._       |
 |   Nav   |      |     |      | _will bring you back to homepage_      |               |
 |    Search Bar    |  |   n   |   n   | _The search bar will render recipes in relation to what was searched._ |
 |    Recipe    |  |   n   |   y   | _Recipes will render on this page when selected_ |
@@ -105,13 +111,13 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| App  |    H    |     3 hrs      |          |    TBD   |
-| Add API |    H     |     4 hrs      |          |     TBD     |
-| Add Header |    H     |     1 hr     |          |     TBD     |
-| Search Bar |    H     |     4 hrs      |          |     TBD     |
-| Recipes to render |    H     |     8 hrs      |          |     TBD     |
-| CSS |    H     |     8 hrs      |          |     TBD     |
-| Final touches |    L     |     4 hrs      |          |     TBD     |
+| App  |    H    |     3 hrs      |          |    8 hrs  |
+| Add API |    H     |     4 hrs      |          |     8hrs    |
+| Add Header |    H     |     3 hr     |          |     1 hr     |
+| Search Bar |    H     |     4 hrs      |          |     2hrs     |
+| Recipes to render |    H     |     8 hrs      |          |     4hrs     |
+| Storybook |    L     |     3 hrs      |          |     8 hrs     |
+| CSS/Final touches |    L     |     6 hrs      |          |     8 hrs     |
 | TOTAL               |          |     32      |         |     TBD     |
 
 <br>
@@ -120,7 +126,6 @@ src
 ### Post-MVP
 
 > 
-
 - _able to 'heart' a recipe._
 - _create an account and keep track of recipes._
 
